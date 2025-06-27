@@ -1,6 +1,6 @@
 
 import jwt from "jsonwebtoken"
-import bcrypt from "bcrypt"
+import bcrypt from 'bcryptjs';
 import validator from "validator"//to check the correct fomrat of email
 import UserModel from '../models/UserModel.js'
 
