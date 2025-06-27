@@ -7,7 +7,7 @@ export const StoreContext = createContext(null);
 
 export const StoreContextProvider = (props) => {
     //to connect backend with fromnte ndf we have to create a url 
-    const url="http://localhost:4001";
+    const url="https://food-hthu.onrender.com";
 
     const [token,setToken]=useState("");
     const [foodlist,setFoodList]=useState([]);
