@@ -1,0 +1,46 @@
+.add{
+    width: 70%;
+    margin: 25px;
+    color: #6d6d6d;
+    font-size: 20px;
+  
+
+}
+.add form{
+    gap: 20px;
+}
+
+.img-upload img{
+   width: 150px;
+}
+.add-name,.add-description{
+      width: 300px;
+}
+.add-name input, .add-description textarea{
+    padding: 15px;
+}
+
+.category-price{
+    
+    gap: 65px;
+    display: flex;
+    
+
+}
+.add-price p{
+    margin-bottom: -10px;
+}
+.category-price select,.category-price input{
+    gap: 10px;
+    max-width: 120px;
+    padding: 10px;
+
+}
+.add-btn{
+    max-width: 120px;
+    border:none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

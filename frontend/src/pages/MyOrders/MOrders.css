@@ -1,0 +1,37 @@
+.my-orders {
+    padding: 20px;
+  }
+  
+  .my-orders h2 {
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .my-orders-order {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .my-orders-order img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .my-orders-order p {
+    margin: 0 10px;
+  }
+  
+  .my-orders-order button {
+    margin-left: auto; /* Pushes the button to the right */
+    cursor: pointer;
+  }

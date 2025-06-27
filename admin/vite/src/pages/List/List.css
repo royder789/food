@@ -1,0 +1,23 @@
+.format{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+    border: 1px solid #cacaca;
+    font-size: 20px;
+}
+.list{
+    width: 70%;
+}
+
+.title{
+    background-color: #f9f9f9;
+}
+.format img{
+    width: 50px;
+}
+
+.cursor{
+    cursor:pointer;
+}
