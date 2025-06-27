@@ -418,7 +418,7 @@ const Navbar = ({ setLogin }) => {
           {/* Luxury Logo with Icon */}
           <Link to='/' className="logo-container" onClick={() => setMenu("home")}>
             <GiKnifeFork className="logo-icon" />
-            <span className="logo-text">Tomato</span>
+            <span className="logo-text">FarmFresh</span>
             <span className="logo-glow"></span>
           </Link>
 

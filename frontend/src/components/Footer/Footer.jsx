@@ -72,12 +72,7 @@ const Footer = () => {
           flexDirection: 'column',
           gap: '25px',
         }}>
-          <img src={assets.logo} alt="Tomato Eats Logo" style={{
-            width: '180px',
-            height: 'auto',
-            filter: 'drop-shadow(0 0 10px rgba(255, 99, 71, 0.5))',
-            transition: 'transform 0.3s',
-          }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
+          
           <p style={{
             fontSize: '14px',
             lineHeight: '1.7',
@@ -91,16 +86,16 @@ const Footer = () => {
             display: 'flex',
             gap: '20px',
           }}>
-            <a href="https://www.facebook.com/tomatoeats" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mihir-kumar-roy-169155263 " target="_blank" rel="noopener noreferrer">
               <img src={assets.facebook_icon} alt="Facebook" style={{ width: '28px', height: '28px', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'rotate(15deg) scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1)'} />
             </a>
-            <a href="https://www.twitter.com/tomatoeats" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mihir-kumar-roy-169155263 " target="_blank" rel="noopener noreferrer">
               <img src={assets.twitter_icon} alt="Twitter" style={{ width: '28px', height: '28px', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'rotate(-15deg) scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1)'} />
             </a>
-            <a href="https://www.linkedin.com/company/tomatoeats" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mihir-kumar-roy-169155263 " target="_blank" rel="noopener noreferrer">
               <img src={assets.linkedin_icon} alt="LinkedIn" style={{ width: '28px', height: '28px', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
             </a>
-            <a href="https://www.instagram.com/tomatoeats" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mihir-kumar-roy-169155263 " target="_blank" rel="noopener noreferrer">
               <img src={assets.instagram_icon || assets.linkedin_icon} alt="Instagram" style={{ width: '28px', height: '28px', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.2)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
             </a>
           </div>
