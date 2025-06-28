@@ -1,5 +1,15 @@
 import { React, useContext, useState, useEffect } from 'react';
-import { FiSearch, FiShoppingBag, FiUser, FiLogOut, FiChevronRight } from 'react-icons/fi';
+import { 
+  FiSearch, 
+  FiShoppingBag, 
+  FiUser, 
+  FiLogOut, 
+  FiChevronRight, 
+  FiMenu, 
+  FiX,
+  FiSmartphone,  // Add this import
+  FiMail         // Add this import
+} from 'react-icons/fi';
 import { GiKnifeFork } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -11,6 +21,7 @@ const Navbar = ({ setLogin }) => {
   const [scrolled, setScrolled] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { cartTotal, token, setToken } = useContext(StoreContext);
 
@@ -26,6 +37,7 @@ const Navbar = ({ setLogin }) => {
     localStorage.removeItem("token");
     setToken("");
     navigate("/");
+    setMobileMenuOpen(false);
   };
 
   const scrollToSection = (id) => {
@@ -34,6 +46,7 @@ const Navbar = ({ setLogin }) => {
       element.scrollIntoView({ behavior: 'smooth' });
       setMenu(id === 'explore-menu' ? 'menu' : id === 'app-download' ? 'mobile-app' : 'contact-us');
     }
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -378,6 +391,107 @@ const Navbar = ({ setLogin }) => {
           transform: translateX(3px);
         }
         
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+          display: none;
+          background: transparent;
+          border: none;
+          color: var(--cream);
+          font-size: 1.8rem;
+          cursor: pointer;
+          z-index: 1001;
+          transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+          color: var(--secondary);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.95);
+          backdrop-filter: blur(10px);
+          z-index: 1000;
+          padding: 5rem 2rem 2rem;
+          transform: translateX(100%);
+          transition: transform 0.3s ease-in-out;
+          border-left: 1px solid rgba(255, 152, 0, 0.2);
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .mobile-menu.open {
+          transform: translateX(0);
+        }
+        
+        .mobile-menu-items {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        
+        .mobile-menu-item {
+          color: var(--cream);
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          transition: var(--transition);
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        
+        .mobile-menu-item:hover {
+          background: rgba(255, 152, 0, 0.1);
+          color: var(--secondary);
+        }
+        
+        .mobile-menu-item.active {
+          color: var(--secondary);
+          font-weight: 600;
+        }
+        
+        .mobile-menu-icon {
+          font-size: 1.2rem;
+        }
+        
+        .mobile-menu-footer {
+          margin-top: auto;
+          padding-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .mobile-menu-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          z-index: 999;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.open {
+          opacity: 1;
+          pointer-events: all;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
           .navbar-menu {
@@ -399,16 +513,76 @@ const Navbar = ({ setLogin }) => {
           }
           
           .navbar-menu {
-            gap: 1rem;
+            display: none;
           }
           
-          .nav-link {
-            font-size: 0.8rem;
+          .mobile-menu-btn {
+            display: block;
           }
           
           .signin-btn {
             padding: 0.6rem 1.4rem;
             font-size: 0.8rem;
+          }
+          
+          .search-container {
+            position: static;
+          }
+          
+          .search-input {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+            border-radius: 0 0 8px 8px;
+            margin-left: 0;
+          }
+          
+          .nav-profile-dropdown {
+            right: auto;
+            left: 0;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .navbar {
+            padding: 0.8rem 5%;
+          }
+          
+          .logo-icon {
+            font-size: 1.5rem;
+          }
+          
+          .logo-text {
+            font-size: 1rem;
+          }
+          
+          .navbar-right {
+            gap: 1rem;
+          }
+          
+          .icon-group {
+            gap: 1rem;
+          }
+          
+          .search-icon, .cart-icon-svg {
+            font-size: 1.2rem;
+          }
+          
+          .profile-container {
+            width: 35px;
+            height: 35px;
+          }
+          
+          .profile-icon {
+            font-size: 1rem;
+          }
+          
+          .mobile-menu {
+            width: 85%;
           }
         }
       `}</style>
@@ -422,7 +596,7 @@ const Navbar = ({ setLogin }) => {
             <span className="logo-glow"></span>
           </Link>
 
-          {/* Animated Navigation */}
+          {/* Desktop Navigation */}
           <ul className="navbar-menu">
             {[
               { id: 'home', label: 'Home' },
@@ -557,9 +731,103 @@ const Navbar = ({ setLogin }) => {
                 </AnimatePresence>
               </div>
             )}
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="mobile-menu-btn" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <FiX /> : <FiMenu />}
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+      
+      <motion.div 
+        className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
+        initial={{ x: '100%' }}
+        animate={{ x: mobileMenuOpen ? 0 : '100%' }}
+        transition={{ type: 'tween', ease: 'easeInOut' }}
+      >
+        <ul className="mobile-menu-items">
+          {[
+            { id: 'home', label: 'Home', icon: <GiKnifeFork className="mobile-menu-icon" /> },
+            { id: 'menu', label: 'Menu', icon: <FiMenu className="mobile-menu-icon" />, target: 'explore-menu' },
+            { id: 'mobile-app', label: 'Mobile App', icon: <FiSmartphone className="mobile-menu-icon" />, target: 'app-download' },
+            { id: 'contact-us', label: 'Contact Us', icon: <FiMail className="mobile-menu-icon" />, target: 'footer' }
+          ].map((item) => (
+            <li key={item.id}>
+              {item.target ? (
+                <a 
+                  href={`#${item.target}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.target);
+                  }}
+                  className={`mobile-menu-item ${menu === item.id ? "active" : ""}`}
+                >
+                  {item.icon}
+                  {item.label}
+                </a>
+              ) : (
+                <Link 
+                  to='/' 
+                  onClick={() => {
+                    setMenu(item.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`mobile-menu-item ${menu === item.id ? "active" : ""}`}
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mobile-menu-footer">
+          {!token ? (
+            <motion.button 
+              onClick={() => {
+                setLogin(true);
+                setMobileMenuOpen(false);
+              }} 
+              className="signin-btn"
+              whileTap={{ scale: 0.95 }}
+              style={{ width: '100%', textAlign: 'center' }}
+            >
+              <span>Sign In</span>
+              <div className="btn-shine"></div>
+            </motion.button>
+          ) : (
+            <>
+              <Link 
+                to='/cart' 
+                className="mobile-menu-item"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <FiShoppingBag className="mobile-menu-icon" />
+                Cart ({cartTotal()})
+              </Link>
+              <button 
+                className="mobile-menu-item"
+                onClick={logOut}
+                style={{ color: '#FF4C4C' }}
+              >
+                <FiLogOut className="mobile-menu-icon" />
+                Log Out
+              </button>
+            </>
+          )}
+        </div>
+      </motion.div>
     </>
   );
 };
