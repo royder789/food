@@ -133,18 +133,7 @@ food/
 │   ├── public/
 │   └── package.json
 └── README.md
-```
 
-## 📸 Screenshots
-
-> *Add your own screenshots in **`frontend/public/images/`** and update paths below.*
-
-## 🔮 Future Improvements
-
-* 🗺️ **Geolocation:** Integrate real-time delivery tracking.
-* 🔔 **Notifications:** Push/email alerts on order updates.
-* 🎨 **Theming:** Dark mode and custom themes.
-* 📦 **Payment Gateway:** Stripe/PayPal integration.
 
 ## 🤝 Contributors
 
