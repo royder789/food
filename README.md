@@ -1,7 +1,6 @@
 **Food Delivery Web App** 🍔🌐
 
 
-
 ## 🔍 Project Overview
 
 A full-stack **Food Delivery Web Application** that enables users to browse, select, and order meals seamlessly. The project comprises a Node.js/Express backend and a React-based frontend, delivering a responsive, intuitive UI for food ordering.
@@ -24,6 +23,17 @@ A full-stack **Food Delivery Web Application** that enables users to browse, sel
 | Database       | MongoDB (Mongoose)    |
 | Authentication | JSON Web Tokens (JWT) |
 | Deployment     | Render.com            |
+
+## 🔧 Skills Demonstrated
+
+* **Frontend Development:** React Hooks, Context API, Functional Components, JSX, Tailwind CSS
+* **State Management:** React Context, useReducer, custom hooks
+* **Backend Development:** RESTful API design with Express.js, routing, middleware
+* **Database Management:** MongoDB schema modeling with Mongoose, CRUD operations
+* **Authentication & Security:** JWT-based auth, password hashing with bcrypt
+* **Version Control:** Git branching, pull requests, collaboration on GitHub
+* **Deployment:** Hosting backend and frontend on Render, environment variable management
+* **Error Handling & Optimization:** Express error middleware, input validation, asynchronous error handling
 
 ## 🚀 Live Demo
 
@@ -136,6 +146,7 @@ food/
 ```
 
 
+
 ## 🤝 Contributors
 
 * **Mihir Kumar Roy** – *Full-Stack Developer*
@@ -146,4 +157,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-*\*Enjoy building and customizing your Food Delivery App!* 🍽️
+\_*Enjoy building and customizing your Food Delivery App!* 🍽️
