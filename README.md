@@ -133,6 +133,7 @@ food/
 │   ├── public/
 │   └── package.json
 └── README.md
+```
 
 
 ## 🤝 Contributors
